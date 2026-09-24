@@ -1,0 +1,9 @@
+CAPABILITIES={
+ "local_api":{"implemented":True,"tested":False,"status":"NEEDS_ATTENTION"},
+ "file_tools":{"implemented":True,"tested":False,"status":"NEEDS_ATTENTION"},
+ "memory":{"implemented":True,"tested":False,"status":"NEEDS_ATTENTION"},
+ "projects":{"implemented":True,"tested":False,"status":"NEEDS_ATTENTION"},
+ "local_ai":{"implemented":False,"tested":False,"status":"NOT_TESTED"},
+ "android_app":{"implemented":False,"tested":False,"status":"NOT_TESTED"},
+ "voice":{"implemented":False,"tested":False,"status":"NOT_TESTED"}
+}
