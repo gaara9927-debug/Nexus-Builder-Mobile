@@ -1,0 +1,8 @@
+.nexus/
+workspace/
+__pycache__/
+*.pyc
+.env
+*.db
+build/
+dist/
