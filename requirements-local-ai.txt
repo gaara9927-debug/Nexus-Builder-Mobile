@@ -1,0 +1,3 @@
+# Optional desktop/Termux-compatible runtime when a wheel/build is available.
+# Do not install automatically on unsupported Android devices.
+llama-cpp-python>=0.3
