@@ -1,0 +1,13 @@
+{
+ "core":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "local_api":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "sandbox_files":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "projects":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "sqlite":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "code_validation":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "game_template":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "robot_planning":{"implemented":true,"tested":false,"status":"NEEDS_ATTENTION"},
+ "local_ai":{"implemented":false,"tested":false,"status":"NOT_TESTED"},
+ "android_apk":{"implemented":false,"tested":false,"status":"NOT_TESTED"},
+ "physical_robotics":{"implemented":false,"tested":false,"status":"BLOCKED"}
+}
