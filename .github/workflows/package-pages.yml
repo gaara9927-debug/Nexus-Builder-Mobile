@@ -1,0 +1,37 @@
+name: Build ZIP and Pages Preview
+on:
+ push:
+  branches: [main]
+ workflow_dispatch:
+permissions:
+ contents: read
+ pages: write
+ id-token: write
+actions:
+ concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+ package:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v4
+   - run: zip -r Nexus-Builder-Mobile.zip . -x '.git/*' -x '.nexus/*' -x 'workspace/*'
+   - uses: actions/upload-artifact@v4
+     with:
+      name: Nexus-Builder-Mobile-ZIP
+      path: Nexus-Builder-Mobile.zip
+ pages:
+  environment:
+   name: github-pages
+   url: ${{ steps.deployment.outputs.page_url }}
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v4
+   - uses: actions/configure-pages@v5
+   - uses: actions/upload-pages-artifact@v3
+     with:
+      path: web
+   - name: Deploy
+     id: deployment
+     uses: actions/deploy-pages@v4
