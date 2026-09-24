@@ -9,10 +9,19 @@ jobs:
      with:
       distribution: temurin
       java-version: '17'
+   - name: Locate Android SDK
+     run: |
+      echo "ANDROID_HOME=$ANDROID_HOME"
+      echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+      test -d "$ANDROID_HOME"
+      ls "$ANDROID_HOME/cmdline-tools"
+      SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)"
+      test -n "$SDKMANAGER"
+      echo "SDKMANAGER=$SDKMANAGER" >> "$GITHUB_ENV"
    - name: Configure Android SDK
      run: |
-      yes | sdkmanager --licenses >/dev/null || true
-      sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+      yes | "$SDKMANAGER" --sdk_root="$ANDROID_HOME" --licenses >/dev/null || true
+      "$SDKMANAGER" --sdk_root="$ANDROID_HOME" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
    - uses: gradle/actions/setup-gradle@v4
      with:
       gradle-version: '8.9'
